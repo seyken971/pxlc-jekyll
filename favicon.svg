@@ -1,15 +1,26 @@
-<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-  <title>Icône pxlc</title>
-  <rect width="200" height="200" fill="white"/>
-  <g transform="translate(31, 31)">
-    <rect x="0"  y="0"  width="40" height="40" rx="7" fill="#3C3489"/>
-    <rect x="49" y="0"  width="40" height="40" rx="7" fill="#7F77DD"/>
-    <rect x="98" y="0"  width="40" height="40" rx="7" fill="#085041"/>
-    <rect x="0"  y="49" width="40" height="40" rx="7" fill="#7F77DD"/>
-    <rect x="49" y="49" width="40" height="40" rx="7" fill="#CECBF6"/>
-    <rect x="98" y="49" width="40" height="40" rx="7" fill="#1D9E75"/>
-    <rect x="0"  y="98" width="40" height="40" rx="7" fill="#3C3489"/>
-    <rect x="49" y="98" width="40" height="40" rx="7" fill="#534AB7"/>
-    <rect x="98" y="98" width="40" height="40" rx="7" fill="#085041"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img">
+  <title>pxlc</title>
+
+  <!-- Fond arrondi — style app icon -->
+  <rect width="32" height="32" rx="6" fill="#0e0c1e"/>
+
+  <!-- Grille 3×3 — pixels 8px, gap 1px, offset 3px
+       Bloc : 3×8 + 2×1 = 26px → centré dans 32px : offset = 3
+  -->
+
+  <!-- Ligne 1 : bleu -->
+  <rect x="3"  y="3"  width="8" height="8" rx="1.5" fill="#1E88E5"/>
+  <rect x="12" y="3"  width="8" height="8" rx="1.5" fill="#1565C0"/>
+  <rect x="21" y="3"  width="8" height="8" rx="1.5" fill="#1976D2"/>
+
+  <!-- Ligne 2 : transition -->
+  <rect x="3"  y="12" width="8" height="8" rx="1.5" fill="#5C6BC0"/>
+  <rect x="12" y="12" width="8" height="8" rx="1.5" fill="#7B1FA2"/>
+  <rect x="21" y="12" width="8" height="8" rx="1.5" fill="#E53935"/>
+
+  <!-- Ligne 3 : violet + rouge -->
+  <rect x="3"  y="21" width="8" height="8" rx="1.5" fill="#6A1B9A"/>
+  <rect x="12" y="21" width="8" height="8" rx="1.5" fill="#AD1457"/>
+  <rect x="21" y="21" width="8" height="8" rx="1.5" fill="#C62828"/>
+
 </svg>

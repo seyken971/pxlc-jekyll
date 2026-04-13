@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500" role="img">
+  <title>pxlc — Protection XL Caraïbes</title>
+  <desc>Logo pxlc : grille 3x3 de pixels bleu, violet, rouge sur fond sombre, suivi du mot pxlc en blanc cassé.</desc>
+
+  <!-- Fond -->
+  <rect width="500" height="500" fill="#0e0c1e"/>
+
+  <!-- Grille 3×3 — Variante C Triangle/Blason
+       Ligne 1 : bleu dominant (blue team / protection)
+       Ligne 2 : transition bleu→violet→rouge
+       Ligne 3 : violet + rouge (red team / attaque)
+       Taille pixel : 64px  Gap : 10px
+       Bloc total : 3×64 + 2×10 = 212px  →  offset x = (500-212)/2 = 144
+       Hauteur bloc : 212px → offset y = 108 pour centrer avec le texte sous la grille
+  -->
+
+  <!-- Ligne 1 -->
+  <rect x="144" y="108" width="64" height="64" rx="10" fill="#1E88E5"/>
+  <rect x="218" y="108" width="64" height="64" rx="10" fill="#1565C0"/>
+  <rect x="292" y="108" width="64" height="64" rx="10" fill="#1976D2"/>
+
+  <!-- Ligne 2 -->
+  <rect x="144" y="182" width="64" height="64" rx="10" fill="#5C6BC0"/>
+  <rect x="218" y="182" width="64" height="64" rx="10" fill="#7B1FA2"/>
+  <rect x="292" y="182" width="64" height="64" rx="10" fill="#E53935"/>
+
+  <!-- Ligne 3 -->
+  <rect x="144" y="256" width="64" height="64" rx="10" fill="#6A1B9A"/>
+  <rect x="218" y="256" width="64" height="64" rx="10" fill="#AD1457"/>
+  <rect x="292" y="256" width="64" height="64" rx="10" fill="#C62828"/>
+
+  <!-- Texte pxlc -->
+  <text
+    x="250"
+    y="390"
+    font-family="'Space Mono', 'Courier New', monospace"
+    font-size="96"
+    font-weight="700"
+    fill="#EEEDFE"
+    text-anchor="middle"
+    letter-spacing="-2"
+  >pxlc</text>
+
+</svg>

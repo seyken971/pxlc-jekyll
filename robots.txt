@@ -1,0 +1,10 @@
+# robots.txt — pxlc.fr
+# Indique aux moteurs de recherche quelles pages indexer.
+
+User-agent: *
+Allow: /
+
+# Ne pas indexer la page de mentions légales dans les résultats de recherche
+Disallow: /mentions-legales.html
+
+Sitemap: https://pxlc.fr/sitemap.xml

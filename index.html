@@ -5,20 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- ═══ SEO ═══════════════════════════════════════════════════════════ -->
-    <title>pxlc | Conseil &amp; médiation numérique — Guadeloupe</title>
+    <title>pXLc | Conseil &amp; vulgarisation numérique — Guadeloupe</title>
     <meta
       name="description"
-      content="pxlc accompagne particuliers, associations  et entreprises en Guadeloupe dans leur transition numérique. Conseil, formation et vulgarisation tech. Site en cours de construction."
+      content="pxlc accompagne particuliers et entreprises en Guadeloupe dans leur transition numérique. Conseil, formation et vulgarisation tech. Site en cours de construction."
     />
     <meta name="robots" content="index, follow" />
 
     <!-- ═══ Open Graph (partage réseaux sociaux) ══════════════════════════ -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://pxlc.fr/" />
-    <meta
-      property="og:title"
-      content="pxlc | Médiation numérique — Guadeloupe"
-    />
+    <meta property="og:title" content="pxlc | Conseil numérique — Guadeloupe" />
     <meta
       property="og:description"
       content="Le numérique, on vous l'explique. Site en cours de construction."
@@ -26,18 +23,47 @@
     <meta property="og:image" content="https://pxlc.fr/og-image.png" />
     <meta name="twitter:card" content="summary_large_image" />
 
+    <!-- ═══ Canonique ════════════════════════════════════════════════════ -->
+    <link rel="canonical" href="https://pxlc.fr/" />
+
+    <!-- ═══ Données structurées JSON-LD (Google + IA génératives) ════════ -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "pxlc",
+        "legalName": "pxlc — Andy Zébus",
+        "description": "Conseil et médiation numérique en Guadeloupe. Accompagnement de particuliers et d'entreprises dans leur transition numérique.",
+        "url": "https://pxlc.fr",
+        "email": "contact@pxlc.fr",
+        "telephone": "+590690717618",
+        "taxID": "813793528",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "8 résidence la familiale, Rue Man Manigard Alfred, Dugazon",
+          "postalCode": "97139",
+          "addressLocality": "Les Abymes",
+          "addressRegion": "Guadeloupe",
+          "addressCountry": "FR"
+        },
+        "areaServed": {
+          "@type": "Place",
+          "name": "Guadeloupe"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Andy Zébus"
+        },
+        "sameAs": ["https://www.linkedin.com/in/azebus"]
+      }
+    </script>
+
     <!-- ═══ Mobile / PWA ══════════════════════════════════════════════════ -->
     <meta name="theme-color" content="#0e0c1e" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <link rel="icon" type="image/png" href="favicon.png" />
 
-    <!-- ═══ CSP (sécurité de base) ════════════════════════════════════════ -->
-    <!--
-    Sur GitHub Pages, créer aussi un fichier _headers à la racine :
-      /*
-        Content-Security-Policy: default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; script-src 'self' 'unsafe-inline'
-    La balise meta ci-dessous est un filet de sécurité complémentaire.
-  -->
+    <!-- ═══ CSP de secours (le fichier _headers fait foi) ════════════════ -->
     <meta
       http-equiv="Content-Security-Policy"
       content="default-src 'self';
@@ -220,6 +246,7 @@
         text-decoration: none;
         border-bottom: 1px solid rgba(93, 202, 165, 0.3);
         transition: border-color 0.2s;
+        /* taille tactile définie dans le bloc WCAG 2.5.8 ci-dessus */
       }
       .contact a:hover {
         border-color: var(--green-light);
@@ -267,7 +294,48 @@
         }
       }
 
-      /* Coin bas-droit */
+      /* ── WCAG 2.2 : focus visible (2.4.11 / 2.4.13) ──────────────────────
+       :focus-visible cible uniquement la navigation clavier, pas les clics souris.
+       Contour vert de la charte, 2px min, ratio de contraste > 3:1 ✓           */
+      :focus-visible {
+        outline: 2px solid var(--green-light);
+        outline-offset: 3px;
+        border-radius: 3px;
+      }
+
+      /* ── WCAG 2.2 : taille cible tactile (2.5.8) ─────────────────────────
+       Les liens de contact sont en 12px — trop petits pour un tap précis.
+       On agrandit la zone cliquable avec padding sans changer le rendu visuel. */
+      .contact a {
+        display: inline-block;
+        padding: 6px 4px;
+        margin: -6px -4px;
+      }
+
+      /* ── WCAG 2.3.3 : respect de prefers-reduced-motion ──────────────────
+       Les utilisateurs ayant activé "Réduire les animations" dans leur OS
+       (épilepsie, vertiges, TDAH) n'auront plus d'animations continues.
+       Bénéfice secondaire : réduit la charge GPU sur mobiles bas de gamme.    */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+        /* Le contenu reste visible même sans l'animation fadeUp */
+        .logo,
+        h1.headline,
+        .progress-wrap,
+        .divider,
+        .contact {
+          opacity: 1;
+          transform: none;
+        }
+      }
+
+      /* Coin bas-droit — FIX WCAG : #8880A8 ratio 5.23 (AA) au lieu de rgba 0.15 */
       .corner {
         position: fixed;
         bottom: 1.5rem;

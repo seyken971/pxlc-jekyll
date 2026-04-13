@@ -6,12 +6,25 @@
     <title>Mentions légales — pxlc</title>
     <meta name="robots" content="noindex, follow" />
     <meta name="theme-color" content="#0e0c1e" />
+
+    <!-- Polices -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
       rel="stylesheet"
     />
+
+    <!-- CSP de secours (le fichier _headers fait foi) -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self';
+                 style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+                 font-src https://fonts.gstatic.com;
+                 img-src 'self' data:;
+                 script-src 'self' 'unsafe-inline'"
+    />
+
     <style>
       *,
       *::before,
@@ -20,131 +33,367 @@
         margin: 0;
         padding: 0;
       }
+
       :root {
         --violet-mid: #534ab7;
         --violet-light: #7f77dd;
         --violet-pale: #cecbf6;
         --green-light: #5dcaa5;
+        --green-mid: #1d9e75;
         --bg: #0e0c1e;
       }
+
       body {
         background: var(--bg);
         color: #fff;
         font-family: "Space Mono", monospace;
-        padding: 3rem 1.5rem 5rem;
+        padding: 3rem 1.5rem 6rem;
         max-width: 680px;
         margin: 0 auto;
-        line-height: 1.8;
+        line-height: 1.9;
         font-size: 13px;
       }
+
+      /* WCAG 2.2 — focus visible (2.4.11 / 2.4.13) */
+      :focus-visible {
+        outline: 2px solid var(--green-light);
+        outline-offset: 3px;
+        border-radius: 3px;
+      }
+
+      /* WCAG 2.3.3 — respect de prefers-reduced-motion */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+
+      /* Navigation retour */
+      .back {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        margin-bottom: 2.5rem;
+        font-size: 11px;
+        color: #8880a8; /* WCAG AA : ratio 5.23 sur #0e0c1e */
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        letter-spacing: 0.08em;
+        padding: 4px 0; /* zone tactile WCAG 2.5.8 */
+        transition:
+          color 0.2s,
+          border-color 0.2s;
+      }
+      .back:hover {
+        color: var(--violet-light);
+        border-color: var(--violet-light);
+      }
+
       h1 {
         font-size: 1.4rem;
         color: var(--violet-pale);
-        margin-bottom: 2rem;
+        margin-bottom: 0.4rem;
       }
+      .subtitle {
+        font-size: 11px;
+        color: #8880a8;
+        letter-spacing: 0.08em;
+        margin-bottom: 2.5rem;
+      }
+
       h2 {
-        font-size: 0.85rem;
+        font-size: 0.78rem;
         color: var(--violet-light);
-        letter-spacing: 0.1em;
+        letter-spacing: 0.12em;
         text-transform: uppercase;
-        margin: 2rem 0 0.6rem;
+        margin: 2.5rem 0 0.7rem;
+        padding-bottom: 0.4rem;
+        border-bottom: 1px solid rgba(83, 74, 183, 0.3);
       }
+
       p {
-        color: rgba(255, 255, 255, 0.7);
+        color: rgba(255, 255, 255, 0.72);
+        margin-bottom: 0.8rem;
       }
+
+      /* WCAG 2.5.8 — zone tactile suffisante sur les liens inline */
       a {
         color: var(--green-light);
         text-decoration: none;
         border-bottom: 1px solid rgba(93, 202, 165, 0.3);
+        transition: border-color 0.2s;
+        display: inline-block;
+        padding: 2px 0;
       }
       a:hover {
         border-color: var(--green-light);
       }
-      .back {
-        display: inline-block;
-        margin-bottom: 2rem;
-        font-size: 11px;
-        color: var(--violet-light);
-        text-decoration: none;
-        border-bottom: 1px solid transparent;
-        letter-spacing: 0.08em;
+
+      /* Encadrés informatifs */
+      .notice {
+        background: rgba(83, 74, 183, 0.1);
+        border-left: 3px solid var(--violet-mid);
+        border-radius: 0 6px 6px 0;
+        padding: 0.8rem 1rem;
+        margin: 1rem 0;
+        color: rgba(255, 255, 255, 0.65);
+        font-size: 12px;
+        line-height: 1.7;
       }
-      .back:hover {
-        border-color: var(--violet-light);
+
+      /* Tableau éditeur */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 0.5rem 0 1rem;
+        font-size: 12px;
+      }
+      td {
+        padding: 6px 8px;
+        vertical-align: top;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        color: rgba(255, 255, 255, 0.72);
+      }
+      td:first-child {
+        color: #8880a8;
+        white-space: nowrap;
+        width: 38%;
+      }
+
+      /* Séparateur bas de page */
+      footer {
+        margin-top: 4rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(83, 74, 183, 0.2);
+        font-size: 11px;
+        color: #8880a8;
+        text-align: center;
       }
     </style>
   </head>
   <body>
-    <a href="index.html" class="back">← Retour</a>
+    <a href="index.html" class="back">← Retour à l'accueil</a>
 
     <h1>Mentions légales</h1>
-
-    <h2>Éditeur du site</h2>
-    <p>
-      <!-- À COMPLÉTER : nom complet, statut juridique, adresse, SIRET si applicable -->
-      Nom complet : Andy Zébus<br />
-      Statut juridique : Micro-entreprise <br />
-      Adresse : 8 résidence la familiale<br />
-      Rue Man Manigard Alfred<br />
-      Dugazon<br />
-      97139 Les Abymes, Guadeloupe (971), France<br />
-      SIRET : 813 793 528 000 23<br />
-      Contact : <a id="mailLink" href="#">…</a>
+    <p class="subtitle">
+      Conformément à la loi n° 2004-575 du 21 juin 2004 (LCEN)
     </p>
 
-    <h2>Hébergeur</h2>
+    <!-- ═══ 1. ÉDITEUR ══════════════════════════════════════════════════════ -->
+    <h2>1. Éditeur du site</h2>
+
+    <table>
+      <tr>
+        <td>Nom</td>
+        <td>Andy Zébus</td>
+      </tr>
+      <tr>
+        <td>Activité</td>
+        <td>Conseil et médiation numérique</td>
+      </tr>
+      <tr>
+        <td>Statut</td>
+        <td>Micro-entreprise / SIREN 813 793 528</td>
+      </tr>
+      <tr>
+        <td>Adresse</td>
+        <td>
+          8 résidence la familiale<br />
+          Rue Man Manigard Alfred<br />
+          Dugazon<br />
+          97139 Les Abymes, Guadeloupe (971), France
+        </td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td><a id="mailLink" href="#">…</a></td>
+      </tr>
+      <tr>
+        <td>Téléphone</td>
+        <td><a id="waLink" href="#">0690 71 76 18</a></td>
+      </tr>
+      <tr>
+        <td>Directeur de la publication</td>
+        <td>Andy Zébus</td>
+      </tr>
+    </table>
+
+
+
+    <!-- ═══ 2. HÉBERGEUR ════════════════════════════════════════════════════ -->
+    <h2>2. Hébergeur</h2>
+
+    <table>
+      <tr>
+        <td>Société</td>
+        <td>GitHub, Inc.</td>
+      </tr>
+      <tr>
+        <td>Adresse</td>
+        <td>
+          88 Colin P. Kelly Jr. Street<br />San Francisco, CA 94107, États-Unis
+        </td>
+      </tr>
+      <tr>
+        <td>Site</td>
+        <td>
+          <a
+            href="https://pages.github.com"
+            rel="noopener noreferrer"
+            target="_blank"
+            >pages.github.com</a
+          >
+        </td>
+      </tr>
+    </table>
+
+    <!-- ═══ 3. PROPRIÉTÉ INTELLECTUELLE ════════════════════════════════════ -->
+    <h2>3. Propriété intellectuelle</h2>
+
     <p>
-      GitHub, Inc.<br />
-      88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis<br />
-      <a
-        href="https://pages.github.com"
-        rel="noopener noreferrer"
-        target="_blank"
-        >pages.github.com</a
-      >
+      L'ensemble du contenu de ce site — textes, visuels, code source, logo —
+      est la propriété exclusive d'Andy Zébus, sauf mention contraire explicite.
+    </p>
+    <p>
+      Toute reproduction, représentation, modification ou exploitation, totale
+      ou partielle, par quelque procédé que ce soit, sans autorisation écrite
+      préalable est interdite et constitue une contrefaçon sanctionnée par les
+      articles L.335-2 et suivants du Code de la propriété intellectuelle.
     </p>
 
-    <h2>Propriété intellectuelle</h2>
-    <p>
-      L'ensemble du contenu de ce site (textes, visuels, code) est la propriété
-      exclusive de son éditeur, sauf mention contraire. Toute reproduction sans
-      autorisation est interdite.
-    </p>
+    <!-- ═══ 4. DONNÉES PERSONNELLES — RGPD ══════════════════════════════════ -->
+    <h2>4. Données personnelles (RGPD)</h2>
 
-    <h2>Données personnelles (RGPD)</h2>
     <p>
-      Ce site ne collecte aucune donnée personnelle, n'installe aucun cookie de
-      traçage et n'utilise aucun outil d'analyse tiers. Les données transmises
-      via les formulaires de contact (email, WhatsApp) sont utilisées uniquement
-      pour répondre à votre demande et ne sont jamais cédées à des tiers.
+      Ce site ne collecte
+      <strong>aucune donnée personnelle automatiquement</strong> : pas de
+      cookies de traçage, pas d'analytics tiers, pas de formulaire enregistré
+      côté serveur.
+    </p>
+    <p>
+      Les seules données traitées sont celles que vous transmettez
+      volontairement en nous contactant par email ou WhatsApp. Elles sont
+      utilisées exclusivement pour répondre à votre demande et ne sont jamais
+      cédées, vendues ou partagées avec des tiers.
     </p>
     <p>
       Conformément au Règlement (UE) 2016/679 (RGPD) et à la loi Informatique
-      &amp; Libertés, vous disposez d'un droit d'accès, de rectification et de
-      suppression de vos données. Pour exercer ce droit :
-      <a id="mailLink2" href="#">…</a>
+      &amp; Libertés modifiée, vous disposez des droits suivants sur vos données
+      :
+    </p>
+    <table>
+      <tr>
+        <td>Droit d'accès</td>
+        <td>Obtenir une copie des données vous concernant.</td>
+      </tr>
+      <tr>
+        <td>Droit de rectification</td>
+        <td>Corriger des données inexactes.</td>
+      </tr>
+      <tr>
+        <td>Droit à l'effacement</td>
+        <td>Demander la suppression de vos données.</td>
+      </tr>
+      <tr>
+        <td>Droit d'opposition</td>
+        <td>Vous opposer à un traitement.</td>
+      </tr>
+    </table>
+    <p>
+      Pour exercer ces droits, contactez : <a id="mailLink2" href="#">…</a
+      ><br />
+      En cas de réponse insatisfaisante, vous pouvez saisir la
+      <a href="https://www.cnil.fr" rel="noopener noreferrer" target="_blank"
+        >CNIL</a
+      >.
     </p>
 
-    <h2>Responsabilité</h2>
+    <!-- ═══ 5. COOKIES ══════════════════════════════════════════════════════ -->
+    <h2>5. Cookies</h2>
+
     <p>
-      L'éditeur s'efforce d'assurer l'exactitude des informations publiées mais
-      ne saurait être tenu responsable des erreurs, omissions ou des résultats
-      obtenus par leur utilisation.
+      Ce site n'utilise <strong>aucun cookie</strong>, qu'il soit technique,
+      analytique ou publicitaire. Aucun bandeau de consentement n'est donc
+      nécessaire.
     </p>
+
+    <!-- ═══ 6. ACCESSIBILITÉ ════════════════════════════════════════════════ -->
+    <h2>6. Accessibilité numérique</h2>
+
+    <p>
+      pxlc s'engage à rendre ce site accessible conformément aux
+      <a
+        href="https://www.w3.org/TR/WCAG22/"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Web Content Accessibility Guidelines (WCAG) 2.2, niveau AA</a
+      >.
+    </p>
+
+    <table>
+      <tr>
+        <td>Niveau visé</td>
+        <td>WCAG 2.2 — Niveau AA</td>
+      </tr>
+      <tr>
+        <td>État actuel</td>
+        <td>Partiellement conforme (site en construction)</td>
+      </tr>
+      <tr>
+        <td>Dernière révision</td>
+        <td>Avril 2026</td>
+      </tr>
+    </table>
+
+    <p>
+      Si vous rencontrez un obstacle à l'accessibilité, signalez-le à
+      <a id="mailLink3" href="#">…</a> — nous traiterons votre retour dans les
+      meilleurs délais.
+    </p>
+
+    <!-- ═══ 7. LIENS EXTERNES ════════════════════════════════════════════════ -->
+    <h2>7. Liens hypertextes</h2>
+
+    <p>
+      Ce site contient des liens vers des sites tiers (LinkedIn, WhatsApp). pxlc
+      n'est pas responsable du contenu de ces sites et ne peut être tenu pour
+      responsable des dommages résultant de leur consultation.
+    </p>
+
+    <!-- ═══ 8. DROIT APPLICABLE ══════════════════════════════════════════════ -->
+    <h2>8. Droit applicable</h2>
+
+    <p>
+      Les présentes mentions légales sont soumises au droit français. En cas de
+      litige, et à défaut de résolution amiable, les tribunaux français seront
+      seuls compétents.
+    </p>
+
+    <footer>pxlc &mdash; Guadeloupe &mdash; Mise à jour : avril 2026</footer>
 
     <script>
-      // Même technique anti-bot que sur index.html
+      // Contacts anti-bot — même technique que index.html
       (function () {
         const u = "contact";
         const d = "pxlc" + "." + "fr";
         const email = u + "@" + d;
-        ["mailLink", "mailLink2"].forEach(function (id) {
+
+        ["mailLink", "mailLink2", "mailLink3"].forEach(function (id) {
           const el = document.getElementById(id);
           if (el) {
             el.textContent = email;
             el.href = "mailto:" + email;
           }
         });
+
+        // WhatsApp
+        const waNumber = "590" + "690" + "717" + "618";
+        const waEl = document.getElementById("waLink");
+        if (waEl) waEl.href = "https://wa.me/" + waNumber;
       })();
     </script>
   </body>
