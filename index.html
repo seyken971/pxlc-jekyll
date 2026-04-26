@@ -460,7 +460,7 @@
         <a id="mailLink" href="#">…</a>
         &nbsp;·&nbsp;
         <!-- FIX critique : numéro WhatsApp masqué comme l'email -->
-        <a id="waLink" href="#">0690 71 76 18</a>
+        <a id="waLink" href="#">...</a>
         &nbsp;·&nbsp;
         <a
           href="https://www.linkedin.com/in/azebus"
@@ -517,6 +517,7 @@
         // WhatsApp — FIX critique : numéro masqué, même technique que l'email
         const waNumber = "590" + "690" + "717" + "618";
         const waEl = document.getElementById("waLink");
+        waEl.textContent = "0690 71 76 18";
         waEl.href = "https://wa.me/" + waNumber;
       })();
     </script>
