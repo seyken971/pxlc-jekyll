@@ -42,12 +42,12 @@ Toutes les données sensibles sont centralisées dans `_config.yml` :
 
 ```yaml
 author:
-  name: "Andy Zébus"
-  siren: "813 793 528"
-  wa_display: "0690 71 76 18"
-  linkedin: "https://www.linkedin.com/in/azebus"
+  name: "Leon KENNEDY"
+  siren: "123 456 789"
+  wa_display: "777 98 76 54"
+  linkedin: "https://www.linkedin.com/in/leonbiohazard"
   address:
-    city: "Les Abymes"
+    city: "Rakoon City"
     # …
 ```
 
