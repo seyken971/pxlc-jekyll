@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'fr' }}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{{ page.title | default: site.title }}</title>
+
+    {% if page.robots %}
+    <meta name="robots" content="{{ page.robots }}" />
+    {% else %}
+    <meta name="robots" content="index, follow" />
+    {% endif %}
+
+    {% if page.description %}
+    <meta name="description" content="{{ page.description }}" />
+    {% elsif site.description %}
+    <meta name="description" content="{{ site.description }}" />
+    {% endif %}
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+    <meta property="og:title" content="{{ page.title | default: site.title }}" />
+    <meta property="og:description" content="{{ page.og_description | default: page.description | default: site.description }}" />
+    <meta property="og:image" content="{{ site.url }}/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+
+    <!-- Thème / icônes -->
+    <meta name="theme-color" content="#0e0c1e" />
+    <link rel="icon" type="image/svg+xml" href="{{ '/favicon.svg' | relative_url }}" />
+    <link rel="icon" type="image/png" href="{{ '/favicon.png' | relative_url }}" />
+
+    <!-- CSP de secours -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self';
+               style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+               font-src https://fonts.gstatic.com;
+               img-src 'self' data:;
+               script-src 'self' 'unsafe-inline'"
+    />
+
+    <!-- Polices -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS global -->
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
+
+    <!-- CSS spécifique à la page (optionnel) -->
+    {% if page.extra_css %}
+    <link rel="stylesheet" href="{{ page.extra_css | relative_url }}" />
+    {% endif %}
+
+    <!-- JSON-LD : injecté uniquement sur la page d'accueil -->
+    {% if page.jsonld %}
+    <script type="application/ld+json">
+      {{ page.jsonld }}
+    </script>
+    {% endif %}
+  </head>
+  <body>
+    {{ content }}
+
+    <!-- JS global (anti-bot contacts) -->
+    <script src="{{ '/assets/js/contacts.js' | relative_url }}"></script>
+
+    <!-- JS spécifique à la page (optionnel) -->
+    {% if page.extra_js %}
+    <script src="{{ page.extra_js | relative_url }}"></script>
+    {% endif %}
+  </body>
+</html>

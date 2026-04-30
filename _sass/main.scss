@@ -1,0 +1,406 @@
+/* ─────────────────────────────────────────────
+   RESET & VARIABLES
+───────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --blue-dark: #1565c0;
+  --blue-mid: #1e88e5;
+  --blue-light: #90caf9;
+  --violet-dark: #4a148c;
+  --violet-mid: #7b1fa2;
+  --violet-light: #ce93d8;
+  --violet-pale: #ede7f6;
+  --red-dark: #b71c1c;
+  --red-mid: #e53935;
+  --red-light: #ef9a9a;
+  --accent: #5c6bc0;
+  --white-warm: #eeedfe;
+  --muted: #8880a8;
+  --bg: #0e0c1e;
+  --bg2: #16132e;
+}
+
+/* ─────────────────────────────────────────────
+   ACCESSIBILITÉ (WCAG 2.2)
+───────────────────────────────────────────── */
+
+/* 2.4.11 / 2.4.13 — Focus visible clavier */
+:focus-visible {
+  outline: 2px solid var(--blue-light);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* 2.3.3 — Respect de prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   BASE
+───────────────────────────────────────────── */
+html,
+body {
+  background: var(--bg);
+  color: #fff;
+  font-family: "Space Mono", monospace;
+}
+
+/* 2.5.8 — Zone tactile suffisante sur les liens inline */
+a {
+  color: var(--white-warm);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(238, 237, 254, 0.3);
+  transition: border-color 0.2s;
+  display: inline-block;
+  padding: 2px 0;
+}
+a:hover {
+  border-color: var(--white-warm);
+}
+
+/* ─────────────────────────────────────────────
+   PAGE D'ACCUEIL
+───────────────────────────────────────────── */
+body.home {
+  height: 100%;
+  overflow: auto;
+}
+
+/* Grille de pixels en arrière-plan */
+.grid-bg {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(18, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  gap: 6px;
+  padding: 6px;
+  opacity: 0.07;
+  pointer-events: none;
+  z-index: 0;
+}
+.grid-bg span {
+  border-radius: 4px;
+  animation: pulse var(--d, 4s) ease-in-out infinite var(--delay, 0s);
+}
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Halo central */
+.halo {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(600px, 90vw);
+  height: min(600px, 90vw);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(123, 31, 162, 0.15) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Logo */
+.logo {
+  margin-bottom: 3rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s ease forwards 0.2s;
+}
+.logo svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Headline */
+h1.headline {
+  font-size: clamp(1.1rem, 3vw, 1.6rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--white-warm);
+  letter-spacing: 0.05em;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s ease forwards 0.5s;
+  margin-bottom: 1rem;
+}
+
+/* Barre de progression */
+.progress-wrap {
+  width: min(420px, 90vw);
+  margin: 2rem 0 0.6rem;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards 0.8s;
+}
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--blue-light);
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+}
+.progress-bar {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(
+    90deg,
+    var(--blue-mid),
+    var(--violet-mid),
+    var(--red-mid)
+  );
+  border-radius: 2px;
+  animation: fillBar 2s cubic-bezier(0.4, 0, 0.2, 1) forwards 1.2s;
+}
+@keyframes fillBar {
+  to {
+    width: 73%;
+  }
+}
+
+/* Contact */
+.contact {
+  margin-top: 3rem;
+  font-size: 12px;
+  color: var(--blue-light);
+  letter-spacing: 0.08em;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards 1.1s;
+  line-height: 2;
+}
+.contact a {
+  display: inline-block;
+  padding: 6px 4px;
+  margin: -6px -4px;
+}
+
+/* Séparateur */
+.divider {
+  width: min(420px, 90vw);
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--blue-mid),
+    var(--violet-mid),
+    var(--red-mid),
+    transparent
+  );
+  margin: 2rem 0;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards 1s;
+}
+
+/* Curseur clignotant */
+.cursor {
+  display: inline-block;
+  width: 10px;
+  height: 1.1em;
+  background: var(--red-mid);
+  vertical-align: middle;
+  margin-left: 4px;
+  animation: blink 1s step-end infinite;
+}
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Coin bas-droit */
+.corner {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  font-size: 10px;
+  color: #8880a8;
+  letter-spacing: 0.1em;
+  z-index: 1;
+}
+
+/* Lien mentions légales (obligation LCEN) */
+.legal-link {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  font-size: 10px;
+  color: #8880a8;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  z-index: 1;
+  border-bottom: 1px solid transparent;
+  transition:
+    color 0.2s,
+    border-color 0.2s;
+}
+.legal-link:hover {
+  color: var(--violet-light);
+  border-color: var(--violet-light);
+}
+
+/* reduced-motion : contenu visible sans animation */
+@media (prefers-reduced-motion: reduce) {
+  .logo,
+  h1.headline,
+  .progress-wrap,
+  .divider,
+  .contact {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   PAGE MENTIONS LÉGALES
+───────────────────────────────────────────── */
+body.legal {
+  padding: 3rem 1.5rem 6rem;
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.9;
+  font-size: 13px;
+}
+
+/* Lien retour */
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 2.5rem;
+  font-size: 11px;
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  letter-spacing: 0.08em;
+  padding: 4px 0;
+  transition:
+    color 0.2s,
+    border-color 0.2s;
+}
+.back:hover {
+  color: var(--blue-light);
+  border-color: var(--blue-light);
+}
+
+body.legal h1 {
+  font-size: 1.4rem;
+  color: var(--white-warm);
+  margin-bottom: 0.4rem;
+}
+.subtitle {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  margin-bottom: 2.5rem;
+}
+
+body.legal h2 {
+  font-size: 0.78rem;
+  color: var(--blue-light);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 2.5rem 0 0.7rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid rgba(30, 136, 229, 0.25);
+}
+
+body.legal p {
+  color: rgba(255, 255, 255, 0.72);
+  margin-bottom: 0.8rem;
+}
+
+/* Tableau */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.5rem 0 1rem;
+  font-size: 12px;
+}
+td {
+  padding: 6px 8px;
+  vertical-align: top;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.72);
+}
+td:first-child {
+  color: var(--muted);
+  white-space: nowrap;
+  width: 38%;
+}
+
+/* Encadrés informatifs */
+.notice {
+  background: rgba(123, 31, 162, 0.1);
+  border-left: 3px solid var(--violet-mid);
+  border-radius: 0 6px 6px 0;
+  padding: 0.8rem 1rem;
+  margin: 1rem 0;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* Pied de page mentions légales */
+body.legal footer {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(30, 136, 229, 0.2);
+  font-size: 11px;
+  color: #8880a8;
+  text-align: center;
+}

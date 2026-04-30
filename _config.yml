@@ -1,0 +1,32 @@
+title: "PXLC"
+description: "Médiation numérique — Guadeloupe"
+url: "https://pxlc.fr"
+baseurl: ""
+lang: fr
+
+author:
+  name: "Andy Zébus"
+  siren: "813 793 528"
+  email_user: "contact"
+  email_domain: "pxlc.fr"
+  wa_number: "590690717618"
+  wa_display: "0690 71 76 18"
+  linkedin: "https://www.linkedin.com/in/azebus"
+  address:
+    street: "8 résidence la familiale, Rue Man Manigard Alfred, Dugazon"
+    postal_code: "97139"
+    city: "Les Abymes"
+    region: "Guadeloupe"
+    country: "FR"
+
+# Plugins GitHub Pages compatibles
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Exclure les fichiers inutiles du build
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - "*.sh"
