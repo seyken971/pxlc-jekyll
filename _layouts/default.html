@@ -78,11 +78,12 @@
     </script>
     {% endif %}
   </head>
-  <body>
+  <body class="{{ page.body_class | default: 'site-page' }}">
     {{ content }}
 
     <!-- JS global (anti-bot contacts) -->
     <script src="{{ '/assets/js/contacts.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/site.js' | relative_url }}"></script>
 
     <!-- JS spécifique à la page (optionnel) -->
     {% if page.extra_js %}

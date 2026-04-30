@@ -1,7 +1,8 @@
 ---
 layout: default
+body_class: home
 title: "PXLC | Médiation numérique — Guadeloupe"
-description: "PXLC accompagne particuliers, associations et entreprises en Guadeloupe dans leur transition numérique. Conseil et médiation tech. Site en cours de construction."
+description: "PXLC accompagne particuliers, associations et entreprises en Guadeloupe dans leur transition numérique. Conseil, médiation et sites web simples à maintenir."
 og_description: "Le numérique, on vous l'explique."
 robots: "index, follow"
 extra_js: "/assets/js/grid.js"
@@ -30,91 +31,86 @@ jsonld: |
   }
 ---
 
-<body class="home">
-  <div class="grid-bg" id="gridBg"></div>
-  <div class="halo"></div>
+<div class="grid-bg" id="gridBg"></div>
+<div class="halo"></div>
 
-  <main>
-    <div class="logo">
-      <svg
-        width="340"
-        height="60"
-        viewBox="0 0 340 60"
-        xmlns="http://www.w3.org/2000/svg"
-        role="img"
-        aria-label="Logo pxlc"
-      >
-        <title>Logo pxlc — Protection XL Caraïbes</title>
-        <!-- Grille 3×3 — Variante C Triangle/Blason -->
-        <!-- Ligne 1 : bleu -->
-        <rect x="0" y="0" width="16" height="16" rx="3" fill="#1E88E5" />
-        <rect x="20" y="0" width="16" height="16" rx="3" fill="#1565C0" />
-        <rect x="40" y="0" width="16" height="16" rx="3" fill="#1976D2" />
-        <!-- Ligne 2 : transition -->
-        <rect x="0" y="20" width="16" height="16" rx="3" fill="#5C6BC0" />
-        <rect x="20" y="20" width="16" height="16" rx="3" fill="#7B1FA2" />
-        <rect x="40" y="20" width="16" height="16" rx="3" fill="#E53935" />
-        <!-- Ligne 3 : violet + rouge -->
-        <rect x="0" y="40" width="16" height="16" rx="3" fill="#6A1B9A" />
-        <rect x="20" y="40" width="16" height="16" rx="3" fill="#AD1457" />
-        <rect x="40" y="40" width="16" height="16" rx="3" fill="#C62828" />
-        <!-- Texte -->
-        <text
-          x="74"
-          y="40"
-          font-family="'Space Mono', monospace"
-          font-size="38"
-          font-weight="700"
-          fill="#EEEDFE"
-        >
-          pxlc
-        </text>
-      </svg>
-    </div>
+{% include site-header.html %}
 
-    <h1 class="headline">
-      Le numérique, on vous l'explique.<span
-        class="cursor"
-        aria-hidden="true"
-      ></span>
-    </h1>
-
-    <div
-      class="progress-wrap"
-      role="progressbar"
-      aria-valuenow="73"
-      aria-valuemin="0"
-      aria-valuemax="100"
-      aria-label="Avancement de la construction : 73%"
-    >
-      <div class="progress-label">
-        <span>CONSTRUCTION EN COURS</span>
-        <span>73%</span>
-      </div>
-      <div class="progress-bar">
-        <div class="progress-fill"></div>
+<main class="home-main">
+  <section class="hero">
+    <div class="hero-copy">
+      <img class="hero-logo" src="{{ '/logo-pxlc-square.svg' | relative_url }}" alt="Logo PXLC" width="84" height="84">
+      <h1>Le numérique, on vous l'explique.</h1>
+      <p>PXLC accompagne les particuliers, associations et entreprises de Guadeloupe pour choisir, comprendre et utiliser les bons outils numériques.</p>
+      <div class="hero-actions">
+        <a class="button primary" href="{{ '/contact/' | relative_url }}">Demander un accompagnement</a>
+        <a class="button ghost" href="{{ '/services/' | relative_url }}">Voir les services</a>
       </div>
     </div>
 
-    <div class="divider" aria-hidden="true"></div>
-
-    <div class="contact">
-      En attendant, contactez-nous :<br />
-      <a id="mailLink" href="#">…</a>
-      &nbsp;·&nbsp;
-      <a id="waLink" href="#">…</a>
-      &nbsp;·&nbsp;
-      <a
-        href="{{ site.author.linkedin }}"
-        rel="noopener noreferrer"
-        target="_blank"
-        >LinkedIn</a
-      >
+    <div class="hero-panel" aria-label="Aperçu des domaines d'accompagnement PXLC">
+      <div class="pixel-card">
+        <span></span><span></span><span></span>
+        <span></span><span></span><span></span>
+        <span></span><span></span><span></span>
+      </div>
+      <div class="panel-lines">
+        <span class="line strong"></span>
+        <span class="line"></span>
+        <span class="line short"></span>
+      </div>
+      <div class="mini-grid">
+        <span>Conseil</span>
+        <span>Web</span>
+        <span>Formation</span>
+      </div>
     </div>
-  </main>
+  </section>
 
-  <a href="{{ '/mentions-legales/' | relative_url }}" class="legal-link"
-    >Mentions légales</a
-  >
-  <div class="corner">codé par {{ site.author.name }}</div>
-</body>
+  <section class="section split">
+    <div>
+      <p class="section-label">Médiation numérique</p>
+      <h2>Moins de jargon. Plus d'autonomie.</h2>
+    </div>
+    <p>PXLC transforme les besoins numériques en décisions concrètes : créer un site, remettre de l'ordre dans des outils, comprendre une solution, sécuriser une présence en ligne ou former une équipe.</p>
+  </section>
+
+  <section class="section cards-three">
+    <article class="feature-card">
+      <span class="feature-number">01</span>
+      <h3>Comprendre</h3>
+      <p>Explications claires, diagnostic des besoins et aide au choix des outils adaptés à votre contexte.</p>
+    </article>
+    <article class="feature-card">
+      <span class="feature-number">02</span>
+      <h3>Mettre en place</h3>
+      <p>Sites vitrines, pages de contact, documentation, organisation des contenus et publication sur GitHub Pages.</p>
+    </article>
+    <article class="feature-card">
+      <span class="feature-number">03</span>
+      <h3>Transmettre</h3>
+      <p>Accompagnement pas à pas pour que vous sachiez modifier, maintenir et expliquer votre dispositif numérique.</p>
+    </article>
+  </section>
+
+  <section class="section service-showcase">
+    <div>
+      <p class="section-label">Services</p>
+      <h2>Des interventions concrètes pour avancer.</h2>
+    </div>
+    <div class="service-list">
+      <a href="{{ '/services/' | relative_url }}">Site vitrine et présence web</a>
+      <a href="{{ '/services/' | relative_url }}">Aide aux démarches et outils numériques</a>
+      <a href="{{ '/services/' | relative_url }}">Documentation et contenus web</a>
+      <a href="{{ '/services/' | relative_url }}">Audit, maintenance et optimisation</a>
+    </div>
+  </section>
+
+  <section class="section cta-band">
+    <h2>Vous avez un besoin numérique à clarifier ?</h2>
+    <p>Expliquez la situation, le public concerné et l'objectif. PXLC vous aide à transformer ça en plan simple.</p>
+    <a class="button primary inverse" href="{{ '/contact/' | relative_url }}">Contacter PXLC</a>
+  </section>
+</main>
+
+{% include site-footer.html %}
