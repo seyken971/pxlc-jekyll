@@ -14,5 +14,8 @@
       <a href="{{ item.url | relative_url }}" {% if page.url == item.url %}aria-current="page"{% endif %}>{{ item.title }}</a>
     {% endfor %}
   </nav>
+  <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Passer en mode clair" data-theme-toggle>
+    <span class="material-symbols-outlined" aria-hidden="true">light_mode</span>
+  </button>
   <a class="header-cta" href="{{ '/contact/' | relative_url }}">Contact</a>
 </header>
