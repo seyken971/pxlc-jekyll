@@ -1,17 +1,17 @@
 ---
 layout: default
-title: "PXLC | Médiation numérique — Guadeloupe"
-description: "PXLC accompagne particuliers, associations et entreprises en Guadeloupe dans leur transition numérique. Conseil et médiation tech. Site en cours de construction."
-og_description: "Le numérique, on vous l'explique."
+body_class: home stitch-site
+title: "Pixels Caraïbes | Médiation numérique en Guadeloupe"
+description: "Pixels Caraïbes accompagne les publics, collectivités, associations et entreprises dans l'autonomie numérique en Guadeloupe."
+og_description: "Médiation numérique accessible, humaine et locale."
 robots: "index, follow"
-extra_js: "/assets/js/grid.js"
 jsonld: |
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "pxlc",
-    "legalName": "pxlc — Andy Zébus",
-    "description": "Médiation numérique en Guadeloupe. Accompagnement de particuliers, d'associations et d'entreprises dans leur transition numérique.",
+    "name": "Pixels Caraïbes",
+    "alternateName": "PXLC",
+    "description": "Médiation numérique en Guadeloupe. Accompagnement de particuliers, d'associations, de collectivités et d'entreprises dans leur transition numérique.",
     "url": "https://pxlc.fr",
     "email": "contact@pxlc.fr",
     "telephone": "+590690717618",
@@ -30,91 +30,88 @@ jsonld: |
   }
 ---
 
-<body class="home">
-  <div class="grid-bg" id="gridBg"></div>
-  <div class="halo"></div>
+{% include site-header.html %}
 
-  <main>
-    <div class="logo">
-      <svg
-        width="340"
-        height="60"
-        viewBox="0 0 340 60"
-        xmlns="http://www.w3.org/2000/svg"
-        role="img"
-        aria-label="Logo pxlc"
-      >
-        <title>Logo pxlc — Protection XL Caraïbes</title>
-        <!-- Grille 3×3 — Variante C Triangle/Blason -->
-        <!-- Ligne 1 : bleu -->
-        <rect x="0" y="0" width="16" height="16" rx="3" fill="#1E88E5" />
-        <rect x="20" y="0" width="16" height="16" rx="3" fill="#1565C0" />
-        <rect x="40" y="0" width="16" height="16" rx="3" fill="#1976D2" />
-        <!-- Ligne 2 : transition -->
-        <rect x="0" y="20" width="16" height="16" rx="3" fill="#5C6BC0" />
-        <rect x="20" y="20" width="16" height="16" rx="3" fill="#7B1FA2" />
-        <rect x="40" y="20" width="16" height="16" rx="3" fill="#E53935" />
-        <!-- Ligne 3 : violet + rouge -->
-        <rect x="0" y="40" width="16" height="16" rx="3" fill="#6A1B9A" />
-        <rect x="20" y="40" width="16" height="16" rx="3" fill="#AD1457" />
-        <rect x="40" y="40" width="16" height="16" rx="3" fill="#C62828" />
-        <!-- Texte -->
-        <text
-          x="74"
-          y="40"
-          font-family="'Space Mono', monospace"
-          font-size="38"
-          font-weight="700"
-          fill="#EEEDFE"
-        >
-          pxlc
-        </text>
-      </svg>
+<main>
+  <section class="hero stitch-hero">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="caribbean-grid"></div>
     </div>
-
-    <h1 class="headline">
-      Le numérique, on vous l'explique.<span
-        class="cursor"
-        aria-hidden="true"
-      ></span>
-    </h1>
-
-    <div
-      class="progress-wrap"
-      role="progressbar"
-      aria-valuenow="73"
-      aria-valuemin="0"
-      aria-valuemax="100"
-      aria-label="Avancement de la construction : 73%"
-    >
-      <div class="progress-label">
-        <span>CONSTRUCTION EN COURS</span>
-        <span>73%</span>
-      </div>
-      <div class="progress-bar">
-        <div class="progress-fill"></div>
+    <div class="hero-content">
+      <p class="ghost-title" aria-hidden="true">PXLC</p>
+      <h1>Rendre le numérique utile, clair et accessible.</h1>
+      <p class="hero-lead">Pixels Caraïbes accompagne les habitants, associations, collectivités et entreprises de Guadeloupe avec une médiation numérique concrète, inclusive et professionnelle.</p>
+      <div class="hero-actions">
+        <a class="button primary" href="{{ '/services/' | relative_url }}">Découvrir les missions</a>
+        <a class="button secondary" href="{{ '/contact/' | relative_url }}">Contacter un médiateur</a>
       </div>
     </div>
+  </section>
 
-    <div class="divider" aria-hidden="true"></div>
-
-    <div class="contact">
-      En attendant, contactez-nous :<br />
-      <a id="mailLink" href="#">…</a>
-      &nbsp;·&nbsp;
-      <a id="waLink" href="#">…</a>
-      &nbsp;·&nbsp;
-      <a
-        href="{{ site.author.linkedin }}"
-        rel="noopener noreferrer"
-        target="_blank"
-        >LinkedIn</a
-      >
+  <section class="section split-section">
+    <div>
+      <p class="section-label">Notre rôle</p>
+      <h2>Une passerelle humaine entre besoins quotidiens et outils numériques.</h2>
     </div>
-  </main>
+    <div class="section-copy">
+      <p>La technologie doit simplifier la vie, pas isoler. Pixels Caraïbes aide chaque public à comprendre, choisir et utiliser les bons outils avec une méthode progressive, accessible et adaptée au terrain caribéen.</p>
+      <div class="mini-proof">
+        <span class="material-symbols-outlined" aria-hidden="true">groups</span>
+        <strong>Accompagnement local</strong>
+        <span>Ateliers, diagnostics et parcours sur mesure.</span>
+      </div>
+    </div>
+  </section>
 
-  <a href="{{ '/mentions-legales/' | relative_url }}" class="legal-link"
-    >Mentions légales</a
-  >
-  <div class="corner">codé par {{ site.author.name }}</div>
-</body>
+  <section class="section">
+    <div class="section-heading centered">
+      <p class="section-label">Services</p>
+      <h2>Des solutions numériques concrètes.</h2>
+    </div>
+    <div class="service-cards">
+      <article class="service-card">
+        <span class="material-symbols-outlined" aria-hidden="true">diversity_3</span>
+        <h3>Ateliers</h3>
+        <p>Sessions collectives pour apprendre par la pratique, résoudre les blocages et développer l'autonomie numérique.</p>
+        <a href="{{ '/services/' | relative_url }}">En savoir plus</a>
+      </article>
+      <article class="service-card accent-orange">
+        <span class="material-symbols-outlined" aria-hidden="true">support_agent</span>
+        <h3>Accompagnement</h3>
+        <p>Guidance personnalisée pour les structures qui veulent moderniser leurs services avec une approche humaine.</p>
+        <a href="{{ '/services/' | relative_url }}">En savoir plus</a>
+      </article>
+      <article class="service-card">
+        <span class="material-symbols-outlined" aria-hidden="true">school</span>
+        <h3>Formation</h3>
+        <p>Modules pédagogiques adaptés aux besoins des publics et aux réalités du territoire.</p>
+        <a href="{{ '/services/' | relative_url }}">En savoir plus</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="section trust-section">
+    <div>
+      <h2>Une démarche pensée pour l'inclusion et la confiance.</h2>
+      <p>Nous intervenons auprès de publics variés pour faire progresser l'autonomie, sécuriser les usages et rendre les outils compréhensibles.</p>
+    </div>
+    <div class="quote-grid">
+      <blockquote>
+        <p>“Une méthode claire pour lever les blocages et rendre les démarches numériques moins intimidantes.”</p>
+        <cite>Accompagnement citoyen</cite>
+      </blockquote>
+      <blockquote>
+        <p>“Un format adapté au contexte local, avec des supports simples et directement actionnables.”</p>
+        <cite>Structure associative</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="section cta-panel">
+    <h2>Vous avez un projet numérique à clarifier ?</h2>
+    <p>Expliquez le public concerné, le besoin et le résultat attendu. Nous vous aidons à choisir le bon format d'accompagnement.</p>
+    <a class="button primary" href="{{ '/contact/' | relative_url }}">Démarrer l'échange</a>
+  </section>
+</main>
+
+{% include site-footer.html %}

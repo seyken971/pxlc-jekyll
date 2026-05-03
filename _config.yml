@@ -4,6 +4,7 @@ domain: pxlc.fr
 url: https://pxlc.fr
 baseurl: ""
 lang: fr
+timezone: America/Guadeloupe
 
 author:
   name: "Andy Zébus"
@@ -25,9 +26,32 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
 
+collections:
+  projects:
+    output: true
+    permalink: /projets/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: page
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+
 # Exclure les fichiers inutiles du build
 exclude:
   - README.md
   - Gemfile
   - Gemfile.lock
   - "*.sh"
+  - vendor
