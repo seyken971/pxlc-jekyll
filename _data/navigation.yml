@@ -2,9 +2,9 @@
   url: /
 - title: Services
   url: /services/
-- title: Projets
-  url: /projets/
-- title: Journal
-  url: /journal/
+- title: À propos
+  url: /propos/
+- title: Actualités
+  url: /actualites/
 - title: Contact
   url: /contact/

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="640" viewBox="0 0 640 640">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#061C2E"/>
+      <stop offset="100%" stop-color="#051828"/>
+    </linearGradient>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700&amp;family=Instrument+Sans&amp;display=swap');
+      .wm  { font-family: "Bricolage Grotesque", "Arial Black", sans-serif; font-weight: 700; }
+      .tag { font-family: "Instrument Sans", Arial, sans-serif; font-weight: 400; }
+    </style>
+  </defs>
+
+  <rect width="640" height="640" fill="url(#bg2)"/>
+
+  <rect x="200" y="150" width="52" height="52" fill="#00D2C8"/>
+  <rect x="263" y="150" width="52" height="52" fill="#01A09D"/>
+  <rect x="326" y="150" width="52" height="52" fill="#036E73"/>
+  <rect x="389" y="150" width="52" height="52" fill="#043C49"/>
+  <rect x="200" y="213" width="52" height="52" fill="#00D2C8"/>
+  <rect x="263" y="213" width="52" height="52" fill="#01A09D"/>
+  <rect x="326" y="213" width="52" height="52" fill="#036E73"/>
+  <rect x="389" y="213" width="52" height="52" fill="#043C49"/>
+  <rect x="200" y="276" width="52" height="52" fill="#00D2C8"/>
+  <rect x="263" y="276" width="52" height="52" fill="#01A09D"/>
+  <rect x="326" y="276" width="52" height="52" fill="#036E73"/>
+  <rect x="389" y="276" width="52" height="52" fill="#043C49"/>
+  <rect x="200" y="339" width="52" height="52" fill="#00D2C8"/>
+  <rect x="263" y="339" width="52" height="52" fill="#01A09D"/>
+  <rect x="326" y="339" width="52" height="52" fill="#036E73"/>
+  <rect x="389" y="339" width="52" height="52" fill="#043C49"/>
+  <rect x="389" y="339" width="52" height="52" fill="#FF781E"/>
+
+  <!-- Wordmark — no orange square below -->
+  <text class="wm" x="320" y="438" font-size="88" fill="#EBFAFF" text-anchor="middle" dominant-baseline="hanging">PXLC</text>
+  <text class="tag" x="320" y="546" font-size="22" fill="#64B4BE" opacity="0.85" text-anchor="middle">PIXELS CARAÏBES</text>
+</svg>

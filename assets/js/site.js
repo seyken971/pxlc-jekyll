@@ -19,4 +19,22 @@
     updateHeader();
     window.addEventListener("scroll", updateHeader, { passive: true });
   }
+
+  var contactForm = document.querySelector("[data-contact-form]");
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      var data = new FormData(contactForm);
+      var email = "contact" + "@" + "pxlc" + "." + "fr";
+      var subject = data.get("subject") || "Demande de contact";
+      var body = [
+        "Nom : " + (data.get("name") || ""),
+        "Email : " + (data.get("email") || ""),
+        "",
+        data.get("message") || ""
+      ].join("\n");
+
+      window.location.href = "mailto:" + email + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+    });
+  }
 })();

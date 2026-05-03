@@ -1,18 +1,17 @@
 ---
 layout: default
-body_class: home
-title: "PXLC | Médiation numérique — Guadeloupe"
-description: "PXLC accompagne particuliers, associations et entreprises en Guadeloupe dans leur transition numérique. Conseil, médiation et sites web simples à maintenir."
-og_description: "Le numérique, on vous l'explique."
+body_class: home stitch-site
+title: "Pixels Caraïbes | Médiation numérique en Guadeloupe"
+description: "Pixels Caraïbes accompagne les publics, collectivités, associations et entreprises dans l'autonomie numérique en Guadeloupe."
+og_description: "Médiation numérique accessible, humaine et locale."
 robots: "index, follow"
-extra_js: "/assets/js/grid.js"
 jsonld: |
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "pxlc",
-    "legalName": "pxlc — Andy Zébus",
-    "description": "Médiation numérique en Guadeloupe. Accompagnement de particuliers, d'associations et d'entreprises dans leur transition numérique.",
+    "name": "Pixels Caraïbes",
+    "alternateName": "PXLC",
+    "description": "Médiation numérique en Guadeloupe. Accompagnement de particuliers, d'associations, de collectivités et d'entreprises dans leur transition numérique.",
     "url": "https://pxlc.fr",
     "email": "contact@pxlc.fr",
     "telephone": "+590690717618",
@@ -31,85 +30,87 @@ jsonld: |
   }
 ---
 
-<div class="grid-bg" id="gridBg"></div>
-<div class="halo"></div>
-
 {% include site-header.html %}
 
-<main class="home-main">
-  <section class="hero">
-    <div class="hero-copy">
-      <img class="hero-logo" src="{{ '/logo-pxlc-square.svg' | relative_url }}" alt="Logo PXLC" width="84" height="84">
-      <h1>Le numérique, on vous l'explique.</h1>
-      <p>PXLC accompagne les particuliers, associations et entreprises de Guadeloupe pour choisir, comprendre et utiliser les bons outils numériques.</p>
+<main>
+  <section class="hero stitch-hero">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="caribbean-grid"></div>
+    </div>
+    <div class="hero-content">
+      <p class="ghost-title" aria-hidden="true">PXLC</p>
+      <h1>Rendre le numérique utile, clair et accessible.</h1>
+      <p class="hero-lead">Pixels Caraïbes accompagne les habitants, associations, collectivités et entreprises de Guadeloupe avec une médiation numérique concrète, inclusive et professionnelle.</p>
       <div class="hero-actions">
-        <a class="button primary" href="{{ '/contact/' | relative_url }}">Demander un accompagnement</a>
-        <a class="button ghost" href="{{ '/services/' | relative_url }}">Voir les services</a>
-      </div>
-    </div>
-
-    <div class="hero-panel" aria-label="Aperçu des domaines d'accompagnement PXLC">
-      <div class="pixel-card">
-        <span></span><span></span><span></span>
-        <span></span><span></span><span></span>
-        <span></span><span></span><span></span>
-      </div>
-      <div class="panel-lines">
-        <span class="line strong"></span>
-        <span class="line"></span>
-        <span class="line short"></span>
-      </div>
-      <div class="mini-grid">
-        <span>Conseil</span>
-        <span>Web</span>
-        <span>Formation</span>
+        <a class="button primary" href="{{ '/services/' | relative_url }}">Découvrir les missions</a>
+        <a class="button secondary" href="{{ '/contact/' | relative_url }}">Contacter un médiateur</a>
       </div>
     </div>
   </section>
 
-  <section class="section split">
+  <section class="section split-section">
     <div>
-      <p class="section-label">Médiation numérique</p>
-      <h2>Moins de jargon. Plus d'autonomie.</h2>
+      <p class="section-label">Notre rôle</p>
+      <h2>Une passerelle humaine entre besoins quotidiens et outils numériques.</h2>
     </div>
-    <p>PXLC transforme les besoins numériques en décisions concrètes : créer un site, remettre de l'ordre dans des outils, comprendre une solution, sécuriser une présence en ligne ou former une équipe.</p>
+    <div class="section-copy">
+      <p>La technologie doit simplifier la vie, pas isoler. Pixels Caraïbes aide chaque public à comprendre, choisir et utiliser les bons outils avec une méthode progressive, accessible et adaptée au terrain caribéen.</p>
+      <div class="mini-proof">
+        <span class="material-symbols-outlined" aria-hidden="true">groups</span>
+        <strong>Accompagnement local</strong>
+        <span>Ateliers, diagnostics et parcours sur mesure.</span>
+      </div>
+    </div>
   </section>
 
-  <section class="section cards-three">
-    <article class="feature-card">
-      <span class="feature-number">01</span>
-      <h3>Comprendre</h3>
-      <p>Explications claires, diagnostic des besoins et aide au choix des outils adaptés à votre contexte.</p>
-    </article>
-    <article class="feature-card">
-      <span class="feature-number">02</span>
-      <h3>Mettre en place</h3>
-      <p>Sites vitrines, pages de contact, documentation, organisation des contenus et publication sur GitHub Pages.</p>
-    </article>
-    <article class="feature-card">
-      <span class="feature-number">03</span>
-      <h3>Transmettre</h3>
-      <p>Accompagnement pas à pas pour que vous sachiez modifier, maintenir et expliquer votre dispositif numérique.</p>
-    </article>
-  </section>
-
-  <section class="section service-showcase">
-    <div>
+  <section class="section">
+    <div class="section-heading centered">
       <p class="section-label">Services</p>
-      <h2>Des interventions concrètes pour avancer.</h2>
+      <h2>Des solutions numériques concrètes.</h2>
     </div>
-    <div class="service-list">
-      <a href="{{ '/services/' | relative_url }}">Site vitrine et présence web</a>
-      <a href="{{ '/services/' | relative_url }}">Aide aux démarches et outils numériques</a>
-      <a href="{{ '/services/' | relative_url }}">Documentation et contenus web</a>
-      <a href="{{ '/services/' | relative_url }}">Audit, maintenance et optimisation</a>
+    <div class="service-cards">
+      <article class="service-card">
+        <span class="material-symbols-outlined" aria-hidden="true">diversity_3</span>
+        <h3>Ateliers</h3>
+        <p>Sessions collectives pour apprendre par la pratique, résoudre les blocages et développer l'autonomie numérique.</p>
+        <a href="{{ '/services/' | relative_url }}">En savoir plus</a>
+      </article>
+      <article class="service-card accent-orange">
+        <span class="material-symbols-outlined" aria-hidden="true">support_agent</span>
+        <h3>Accompagnement</h3>
+        <p>Guidance personnalisée pour les structures qui veulent moderniser leurs services avec une approche humaine.</p>
+        <a href="{{ '/services/' | relative_url }}">En savoir plus</a>
+      </article>
+      <article class="service-card">
+        <span class="material-symbols-outlined" aria-hidden="true">school</span>
+        <h3>Formation</h3>
+        <p>Modules pédagogiques adaptés aux besoins des publics et aux réalités du territoire.</p>
+        <a href="{{ '/services/' | relative_url }}">En savoir plus</a>
+      </article>
     </div>
   </section>
 
-  <section class="section cta-band">
-    <h2>Vous avez un besoin numérique à clarifier ?</h2>
-    <p>Expliquez la situation, le public concerné et l'objectif. PXLC vous aide à transformer ça en plan simple.</p>
-    <a class="button primary inverse" href="{{ '/contact/' | relative_url }}">Contacter PXLC</a>
+  <section class="section trust-section">
+    <div>
+      <h2>Une démarche pensée pour l'inclusion et la confiance.</h2>
+      <p>Nous intervenons auprès de publics variés pour faire progresser l'autonomie, sécuriser les usages et rendre les outils compréhensibles.</p>
+    </div>
+    <div class="quote-grid">
+      <blockquote>
+        <p>“Une méthode claire pour lever les blocages et rendre les démarches numériques moins intimidantes.”</p>
+        <cite>Accompagnement citoyen</cite>
+      </blockquote>
+      <blockquote>
+        <p>“Un format adapté au contexte local, avec des supports simples et directement actionnables.”</p>
+        <cite>Structure associative</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="section cta-panel">
+    <h2>Vous avez un projet numérique à clarifier ?</h2>
+    <p>Expliquez le public concerné, le besoin et le résultat attendu. Nous vous aidons à choisir le bon format d'accompagnement.</p>
+    <a class="button primary" href="{{ '/contact/' | relative_url }}">Démarrer l'échange</a>
   </section>
 </main>
 

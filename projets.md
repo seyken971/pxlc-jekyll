@@ -1,17 +1,11 @@
 ---
-title: Projets
+layout: default
+body_class: stitch-site
+title: "À propos | Pixels Caraïbes"
 permalink: /projets/
-kicker: Références
-description: Exemples de formats de projets que PXLC peut produire ou accompagner.
 ---
 
-<div class="project-grid">
-  {% assign projects = site.projects | sort: "year" | reverse %}
-  {% for project in projects %}
-    <a class="project-card" href="{{ project.url | relative_url }}">
-      <span>{{ project.category }}</span>
-      <h2>{{ project.title }}</h2>
-      <p>{{ project.description }}</p>
-    </a>
-  {% endfor %}
-</div>
+<meta http-equiv="refresh" content="0; url={{ '/propos/' | relative_url }}">
+<main class="redirect-page">
+  <p>Redirection vers <a href="{{ '/propos/' | relative_url }}">la page À propos</a>.</p>
+</main>
