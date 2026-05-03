@@ -30,7 +30,7 @@ permalink: /contact/
       </div>
       <label>
         <span>Sujet</span>
-        <input name="subject" placeholder="Comment pouvons-nous vous aider ?" required>
+        <input name="subject" placeholder="Quelle est votre idée ?" required>
       </label>
       <label>
         <span>Message</span>
@@ -62,7 +62,7 @@ permalink: /contact/
         <span class="material-symbols-outlined" aria-hidden="true">location_on</span>
         <div>
           <p>Zone d'intervention</p>
-          <strong>Guadeloupe, avec un point d'ancrage aux Abymes.</strong>
+          <strong>Guadeloupe</strong>
         </div>
       </div>
     </aside>
