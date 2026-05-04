@@ -10,37 +10,37 @@
 
 :root {
   /* ── Fond & surfaces ─────────────────────────────────────── */
-  --background:      #EBF5F8;
-  --surface:         #FFFFFF;
-  --surface-low:     #F4FAFB;
-  --surface-high:    #DFF0F4;
-  --surface-highest: #CDE8EE;
+  --background: #ebf5f8;
+  --surface: #ffffff;
+  --surface-low: #f4fafb;
+  --surface-high: #dff0f4;
+  --surface-highest: #cde8ee;
 
   /* ── Textes ──────────────────────────────────────────────── */
-  --text:   #061C2E;
-  --muted:  #2D4B55;
-  --quiet:  #4D7080;
+  --text: #061c2e;
+  --muted: #2d4b55;
+  --quiet: #4d7080;
 
   /* ── Couleurs fonctionnelles ─────────────────────────────── */
   /* Primary accessible : #036E73 sur #EBF5F8 → ratio ≈ 4.6:1 ✓ */
-  --primary:        #036E73;
-  --primary-strong: #024F53;
-  --primary-ink:    #EBF5F8;
+  --primary: #036e73;
+  --primary-strong: #024f53;
+  --primary-ink: #ebf5f8;
 
   /* Cyan vif — décoration uniquement, pas de texte */
-  --cyan-vivid:     #00D2C8;
+  --cyan-vivid: #00d2c8;
 
-  --secondary:      #E8630A;
-  --secondary-soft: #C05008;
+  --secondary: #e8630a;
+  --secondary-soft: #c05008;
 
   /* ── Bordures ────────────────────────────────────────────── */
-  --line:        rgba(3, 110, 115, 0.14);
+  --line: rgba(3, 110, 115, 0.14);
   --line-strong: rgba(3, 110, 115, 0.32);
 
   /* ── Effets ──────────────────────────────────────────────── */
-  --shadow: 0 8px 40px rgba(6, 28, 46, 0.10);
+  --shadow: 0 8px 40px rgba(6, 28, 46, 0.1);
   --radius: 8px;
-  --max:    1180px;
+  --max: 1180px;
   --gutter: clamp(1rem, 4vw, 5rem);
 }
 
@@ -52,8 +52,16 @@ body {
   min-height: 100%;
   overflow-x: hidden;
   background:
-    radial-gradient(circle at 12% 6%,  rgba(0, 210, 200, 0.12), transparent 28rem),
-    radial-gradient(circle at 88% 10%, rgba(232, 99, 10, 0.08),  transparent 24rem),
+    radial-gradient(
+      circle at 12% 6%,
+      rgba(0, 210, 200, 0.12),
+      transparent 28rem
+    ),
+    radial-gradient(
+      circle at 88% 10%,
+      rgba(232, 99, 10, 0.08),
+      transparent 24rem
+    ),
     var(--background);
   color: var(--text);
   font-family: "Inter", system-ui, sans-serif;
@@ -108,21 +116,12 @@ textarea {
   border: 0;
 }
 
-.material-symbols-outlined {
-  font-family: "Material Symbols Outlined";
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;
-  line-height: 1;
-  letter-spacing: normal;
-  text-transform: none;
+.icon {
   display: inline-block;
-  white-space: nowrap;
-  direction: ltr;
-  font-feature-settings: "liga";
-  -webkit-font-feature-settings: "liga";
-  -webkit-font-smoothing: antialiased;
-  font-variation-settings: "FILL" 0, "wght" 500, "GRAD" 0, "opsz" 24;
+  vertical-align: middle;
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: currentColor; // hérite la couleur du texte parent
 }
 
 .site-header,
@@ -185,7 +184,9 @@ textarea {
   font-family: "Manrope", system-ui, sans-serif;
   font-weight: 700;
   font-size: 0.95rem;
-  transition: color 0.2s, border-color 0.2s;
+  transition:
+    color 0.2s,
+    border-color 0.2s;
 }
 
 .site-nav a:hover,
@@ -208,7 +209,11 @@ textarea {
   font-weight: 700;
   line-height: 1;
   cursor: pointer;
-  transition: transform 0.18s, filter 0.18s, background 0.18s, border-color 0.18s;
+  transition:
+    transform 0.18s,
+    filter 0.18s,
+    background 0.18s,
+    border-color 0.18s;
 }
 
 .header-cta,
@@ -266,7 +271,11 @@ textarea {
   content: "";
   background:
     linear-gradient(to bottom, rgba(235, 245, 248, 0.05), var(--background)),
-    radial-gradient(circle at 50% 40%, rgba(0, 210, 200, 0.12), transparent 28rem),
+    radial-gradient(
+      circle at 50% 40%,
+      rgba(0, 210, 200, 0.12),
+      transparent 28rem
+    ),
     linear-gradient(135deg, rgba(205, 232, 238, 0.7), rgba(235, 245, 248, 0.95));
 }
 
@@ -275,10 +284,27 @@ textarea {
   inset: 12% 4% 0;
   opacity: 0.28;
   background:
-    radial-gradient(circle at 25% 60%, rgba(0, 210, 200, 0.7) 0 2px, transparent 3px),
-    radial-gradient(circle at 44% 47%, rgba(232, 99, 10, 0.55) 0 2px, transparent 3px),
-    radial-gradient(circle at 65% 54%, rgba(3, 110, 115, 0.6) 0 2px, transparent 3px),
-    linear-gradient(120deg, transparent 10%, rgba(0, 210, 200, 0.18) 40%, transparent 70%);
+    radial-gradient(
+      circle at 25% 60%,
+      rgba(0, 210, 200, 0.7) 0 2px,
+      transparent 3px
+    ),
+    radial-gradient(
+      circle at 44% 47%,
+      rgba(232, 99, 10, 0.55) 0 2px,
+      transparent 3px
+    ),
+    radial-gradient(
+      circle at 65% 54%,
+      rgba(3, 110, 115, 0.6) 0 2px,
+      transparent 3px
+    ),
+    linear-gradient(
+      120deg,
+      transparent 10%,
+      rgba(0, 210, 200, 0.18) 40%,
+      transparent 70%
+    );
   filter: blur(0.1px);
 }
 
@@ -387,7 +413,7 @@ blockquote,
 .values-section article {
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: rgba(255, 255, 255, 0.80);
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(14px);
 }
 
@@ -398,7 +424,7 @@ blockquote,
   padding: 1rem;
 }
 
-.mini-proof .material-symbols-outlined {
+.mini-proof .icon {
   grid-row: span 2;
   color: var(--primary);
 }
@@ -428,7 +454,11 @@ blockquote,
 .service-card {
   min-height: 280px;
   padding: 1.5rem;
-  transition: transform 0.2s, border-color 0.2s, background 0.2s, box-shadow 0.2s;
+  transition:
+    transform 0.2s,
+    border-color 0.2s,
+    background 0.2s,
+    box-shadow 0.2s;
 }
 
 .service-card:hover,
@@ -440,22 +470,22 @@ blockquote,
 }
 
 /* Icônes de cards */
-.service-card .material-symbols-outlined,
-.audience-card .material-symbols-outlined,
-.module-grid .material-symbols-outlined,
-.values-section .material-symbols-outlined {
+.service-card .icon,
+.audience-card .icon,
+.module-grid .icon,
+.values-section .icon {
   width: 48px;
   height: 48px;
   display: inline-grid;
   place-items: center;
   margin-bottom: 2.3rem;
   border-radius: var(--radius);
-  background: rgba(3, 110, 115, 0.10);
+  background: rgba(3, 110, 115, 0.1);
   color: var(--primary);
 }
 
-.service-card.accent-orange .material-symbols-outlined {
-  background: rgba(232, 99, 10, 0.10);
+.service-card.accent-orange .icon {
+  background: rgba(232, 99, 10, 0.1);
   color: var(--secondary);
 }
 
@@ -511,8 +541,12 @@ blockquote cite {
   border: 1px solid var(--line-strong);
   border-radius: var(--radius);
   background:
-    radial-gradient(circle at 90% 15%, rgba(232, 99, 10, 0.10), transparent 20rem),
-    linear-gradient(135deg, rgba(0, 210, 200, 0.10), rgba(255, 255, 255, 0.90));
+    radial-gradient(
+      circle at 90% 15%,
+      rgba(232, 99, 10, 0.1),
+      transparent 20rem
+    ),
+    linear-gradient(135deg, rgba(0, 210, 200, 0.1), rgba(255, 255, 255, 0.9));
   text-align: center;
 }
 
@@ -560,8 +594,12 @@ blockquote cite {
 .audience-card.featured {
   grid-column: span 2;
   background:
-    radial-gradient(circle at 100% 0%, rgba(0, 210, 200, 0.12), transparent 15rem),
-    rgba(255, 255, 255, 0.90);
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(0, 210, 200, 0.12),
+      transparent 15rem
+    ),
+    rgba(255, 255, 255, 0.9);
 }
 
 .audience-card ul {
@@ -695,7 +733,7 @@ textarea:focus {
   border-top: 1px solid var(--line);
 }
 
-.contact-row .material-symbols-outlined {
+.contact-row .icon {
   color: var(--primary);
 }
 

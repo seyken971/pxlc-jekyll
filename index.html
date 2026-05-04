@@ -46,12 +46,8 @@ jsonld: |
         inclusive et professionnelle.
       </p>
       <div class="hero-actions">
-        <a class="button primary" href="{{ '/services/' | relative_url }}"
-          >Découvrir les missions</a
-        >
-        <a class="button secondary" href="{{ '/contact/' | relative_url }}"
-          >Contacter un médiateur</a
-        >
+        <a class="button primary" href="{{ '/services/' | relative_url }}">Découvrir les missions</a>
+        <a class="button secondary" href="{{ '/contact/' | relative_url }}">Contacter un médiateur</a>
       </div>
     </div>
   </section>
@@ -70,7 +66,7 @@ jsonld: |
         méthode progressive, accessible et adaptée au terrain caribéen.
       </p>
       <div class="mini-proof">
-        <span class="material-symbols-outlined" aria-hidden="true">groups</span>
+        {% include icons.html name="groups" %}
         <strong>Accompagnement local</strong>
         <span>Ateliers, diagnostics et parcours sur mesure.</span>
       </div>
@@ -84,9 +80,7 @@ jsonld: |
     </div>
     <div class="service-cards">
       <article class="service-card">
-        <span class="material-symbols-outlined" aria-hidden="true"
-          >diversity_3</span
-        >
+        {% include icons.html name="diversity_3" %}
         <h3>Ateliers</h3>
         <p>
           Sessions collectives pour apprendre par la pratique, résoudre les
@@ -95,9 +89,7 @@ jsonld: |
         <a href="{{ '/services/' | relative_url }}">En savoir plus</a>
       </article>
       <article class="service-card accent-orange">
-        <span class="material-symbols-outlined" aria-hidden="true"
-          >support_agent</span
-        >
+        {% include icons.html name="support_agent" %}
         <h3>Accompagnement</h3>
         <p>
           Guidance personnalisée pour les structures qui veulent moderniser
@@ -106,7 +98,7 @@ jsonld: |
         <a href="{{ '/services/' | relative_url }}">En savoir plus</a>
       </article>
       <article class="service-card">
-        <span class="material-symbols-outlined" aria-hidden="true">school</span>
+        {% include icons.html name="school" %}
         <h3>Formation</h3>
         <p>
           Modules pédagogiques adaptés aux besoins des publics et aux réalités
@@ -128,15 +120,15 @@ jsonld: |
     <div class="quote-grid">
       <blockquote>
         <p>
-          “Une méthode claire pour lever les blocages et rendre les démarches
-          numériques moins intimidantes.”
+          "Une méthode claire pour lever les blocages et rendre les démarches
+          numériques moins intimidantes."
         </p>
         <cite>Accompagnement citoyen</cite>
       </blockquote>
       <blockquote>
         <p>
-          “Un format adapté au contexte local, avec des supports simples et
-          directement actionnables.”
+          "Un format adapté au contexte local, avec des supports simples et
+          directement actionnables."
         </p>
         <cite>Structure associative</cite>
       </blockquote>
@@ -149,9 +141,7 @@ jsonld: |
       Expliquez le public concerné, le besoin et le résultat attendu. Nous vous
       aidons à choisir le bon format d'accompagnement.
     </p>
-    <a class="button primary" href="{{ '/contact/' | relative_url }}"
-      >Démarrer l'échange</a
-    >
+    <a class="button primary" href="{{ '/contact/' | relative_url }}">Démarrer l'échange</a>
   </section>
 </main>
 

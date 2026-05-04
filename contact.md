@@ -38,34 +38,35 @@ permalink: /contact/
       </label>
       <button class="button primary" type="submit">
         Envoyer le message
-        <span class="material-symbols-outlined" aria-hidden="true">send</span>
+        {% include icons.html name="send" %}
       </button>
     </form>
 
     <aside class="contact-card">
       <h2>Coordonnées</h2>
       <div class="contact-row">
-        <span class="material-symbols-outlined" aria-hidden="true">mail</span>
+        {% include icons.html name="mail" label="Email de contact" %}
         <div>
           <p>Email</p>
           <a id="mailLink" href="#">…</a>
         </div>
       </div>
       <div class="contact-row">
-        <span class="material-symbols-outlined" aria-hidden="true">call</span>
+        {% include icons.html name="call" label="Téléphone" %}
         <div>
           <p>WhatsApp</p>
           <a id="waLink" href="#">…</a>
         </div>
       </div>
       <div class="contact-row">
-        <span class="material-symbols-outlined" aria-hidden="true">location_on</span>
+        {% include icons.html name="location_on" label="Adresse" %}
         <div>
           <p>Zone d'intervention</p>
           <strong>Guadeloupe</strong>
         </div>
       </div>
     </aside>
+
   </section>
 </main>
 

@@ -29,17 +29,17 @@ permalink: /propos/
 
   <section class="section values-section">
     <article>
-      <span class="material-symbols-outlined" aria-hidden="true">accessibility_new</span>
+      {% include icons.html name="accessibility_new" %}
       <h2>Inclusion</h2>
       <p>Concevoir des parcours compréhensibles pour les personnes les plus éloignées du numérique.</p>
     </article>
     <article>
-      <span class="material-symbols-outlined" aria-hidden="true">verified_user</span>
+      {% include icons.html name="verified_user" %}
       <h2>Confiance</h2>
       <p>Expliquer les risques, sécuriser les usages et redonner de la maîtrise.</p>
     </article>
     <article>
-      <span class="material-symbols-outlined" aria-hidden="true">handshake</span>
+      {% include icons.html name="handshake" %}
       <h2>Partage</h2>
       <p>Transmettre des méthodes simples pour que les outils restent utilisables après l'intervention.</p>
     </article>

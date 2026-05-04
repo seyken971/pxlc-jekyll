@@ -1,12 +1,7 @@
 <footer class="site-footer">
   <div>
     <a class="brand footer-brand" href="{{ '/' | relative_url }}">
-      <img
-        src="{{ '/PXLC_logo_light.svg' | relative_url }}"
-        alt=""
-        width="40"
-        height="40"
-      />
+      <img src="{{ '/PXLC_logo_light.svg' | relative_url }}" alt="" width="40" height="40" />
       <span>Pixels Caraïbes</span>
     </a>
     <p>© 2026 Pixels Caraïbes. {{ site.description }}</p>
@@ -14,11 +9,7 @@
   <div class="footer-links">
     <a href="{{ '/mentions-legales/' | relative_url }}">Mentions légales</a>
     <a id="mailLink3" href="#">…</a>
-    <a
-      href="{{ site.author.linkedin }}"
-      rel="noopener noreferrer"
-      target="_blank"
-      >LinkedIn</a
-    >
+    <a href="{{ site.author.linkedin }}" rel="noopener noreferrer" target="_blank">{% include icons.html name="linkedin"
+      %}LinkedIn</a>
   </div>
 </footer>

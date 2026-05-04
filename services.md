@@ -24,7 +24,7 @@ permalink: /services/
     </div>
     <div class="audience-grid">
       <article class="audience-card">
-        <span class="material-symbols-outlined" aria-hidden="true">elderly</span>
+        {% include icons.html name="elderly" %}
         <h3>Séniors & inclusion</h3>
         <p>Lutter contre l'illectronisme en douceur: communiquer avec ses proches, gérer ses démarches et sécuriser ses données.</p>
         <ul>
@@ -33,17 +33,17 @@ permalink: /services/
         </ul>
       </article>
       <article class="audience-card">
-        <span class="material-symbols-outlined" aria-hidden="true">code</span>
+        {% include icons.html name="code" %}
         <h3>Jeunesse & code</h3>
         <p>Éveiller les vocations numériques dès le plus jeune âge par la création, la logique et l'expérimentation.</p>
       </article>
       <article class="audience-card">
-        <span class="material-symbols-outlined" aria-hidden="true">business_center</span>
+        {% include icons.html name="business_center" %}
         <h3>Professionnels</h3>
         <p>Accélérer la transformation digitale avec des outils collaboratifs, de la méthode et des bases de cybersécurité.</p>
       </article>
       <article class="audience-card featured">
-        <span class="material-symbols-outlined" aria-hidden="true">account_balance</span>
+        {% include icons.html name="account_balance" %}
         <h3>Collectivités & territoires</h3>
         <p>Déployer des politiques d'inclusion numérique à l'échelle locale: diagnostic territorial, ateliers et espaces publics numériques.</p>
         <a href="{{ '/contact/' | relative_url }}">Planifier un diagnostic</a>
@@ -83,17 +83,17 @@ permalink: /services/
     </div>
     <div class="module-grid">
       <article>
-        <span class="material-symbols-outlined" aria-hidden="true">security</span>
+        {% include icons.html name="security" %}
         <h3>Cybersécurité</h3>
         <p>Protéger ses comptes, identifier les tentatives de phishing et gérer ses mots de passe.</p>
       </article>
       <article>
-        <span class="material-symbols-outlined" aria-hidden="true">psychology</span>
+        {% include icons.html name="psychology" %}
         <h3>Intelligence artificielle</h3>
         <p>Comprendre les enjeux de l'IA et apprendre à utiliser les outils pour gagner du temps.</p>
       </article>
       <article>
-        <span class="material-symbols-outlined" aria-hidden="true">hub</span>
+        {% include icons.html name="hub" %}
         <h3>Collaboration</h3>
         <p>Maîtriser les outils de travail à distance, de gestion de projet et de partage documentaire.</p>
       </article>
