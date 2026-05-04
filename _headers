@@ -33,7 +33,7 @@
   # IMPORTANT : ne s'applique qu'aux chemins explicitement listés ci-dessous.
   # Ne pas mettre de cache long sur index.html lui-même (voir section suivante).
 
-/favicon.svg
+/PXLC_favicon_adaptive.svg
   Cache-Control: public, max-age=31536000, immutable
 
 /favicon.png
@@ -49,3 +49,6 @@
 
 /mentions-legales.html
   Cache-Control: no-cache
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable

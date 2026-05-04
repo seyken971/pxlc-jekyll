@@ -613,11 +613,10 @@ blockquote cite {
 }
 
 .audience-card li::before {
-  content: "check_circle";
+  content: "✓";
   margin-right: 0.45rem;
   color: var(--primary);
-  font-family: "Material Symbols Outlined";
-  vertical-align: -0.2em;
+  font-family: inherit;
 }
 
 /* ── Process ───────────────────────────────────────────────── */
