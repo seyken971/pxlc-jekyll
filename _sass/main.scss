@@ -9,24 +9,38 @@
 }
 
 :root {
-  --background: #00161f;
-  --surface: #031e29;
-  --surface-low: #07222e;
-  --surface-high: #132d38;
-  --surface-highest: #1f3844;
-  --text: #e7f6ff;
-  --muted: #bac9c9;
-  --quiet: #859493;
-  --primary: #47eaed;
-  --primary-strong: #00ced1;
-  --primary-ink: #003738;
-  --secondary: #ff7f1c;
-  --secondary-soft: #ffb68b;
-  --line: rgba(186, 201, 201, 0.18);
-  --line-strong: rgba(71, 234, 237, 0.34);
-  --shadow: 0 28px 80px rgba(0, 0, 0, 0.34);
+  /* ── Fond & surfaces ─────────────────────────────────────── */
+  --background:      #EBF5F8;
+  --surface:         #FFFFFF;
+  --surface-low:     #F4FAFB;
+  --surface-high:    #DFF0F4;
+  --surface-highest: #CDE8EE;
+
+  /* ── Textes ──────────────────────────────────────────────── */
+  --text:   #061C2E;
+  --muted:  #2D4B55;
+  --quiet:  #4D7080;
+
+  /* ── Couleurs fonctionnelles ─────────────────────────────── */
+  /* Primary accessible : #036E73 sur #EBF5F8 → ratio ≈ 4.6:1 ✓ */
+  --primary:        #036E73;
+  --primary-strong: #024F53;
+  --primary-ink:    #EBF5F8;
+
+  /* Cyan vif — décoration uniquement, pas de texte */
+  --cyan-vivid:     #00D2C8;
+
+  --secondary:      #E8630A;
+  --secondary-soft: #C05008;
+
+  /* ── Bordures ────────────────────────────────────────────── */
+  --line:        rgba(3, 110, 115, 0.14);
+  --line-strong: rgba(3, 110, 115, 0.32);
+
+  /* ── Effets ──────────────────────────────────────────────── */
+  --shadow: 0 8px 40px rgba(6, 28, 46, 0.10);
   --radius: 8px;
-  --max: 1180px;
+  --max:    1180px;
   --gutter: clamp(1rem, 4vw, 5rem);
 }
 
@@ -38,14 +52,15 @@ body {
   min-height: 100%;
   overflow-x: hidden;
   background:
-    radial-gradient(circle at 15% 5%, rgba(0, 205, 218, 0.18), transparent 32rem),
-    radial-gradient(circle at 85% 12%, rgba(255, 127, 28, 0.12), transparent 28rem),
+    radial-gradient(circle at 12% 6%,  rgba(0, 210, 200, 0.12), transparent 28rem),
+    radial-gradient(circle at 88% 10%, rgba(232, 99, 10, 0.08),  transparent 24rem),
     var(--background);
   color: var(--text);
   font-family: "Inter", system-ui, sans-serif;
   line-height: 1.6;
 }
 
+/* Grille subtile en fond — cyan très dilué sur fond clair */
 body::before {
   position: fixed;
   inset: 0;
@@ -53,10 +68,10 @@ body::before {
   pointer-events: none;
   content: "";
   background-image:
-    linear-gradient(rgba(71, 234, 237, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(71, 234, 237, 0.045) 1px, transparent 1px);
+    linear-gradient(rgba(3, 110, 115, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(3, 110, 115, 0.055) 1px, transparent 1px);
   background-size: 54px 54px;
-  mask-image: linear-gradient(to bottom, black 0%, transparent 80%);
+  mask-image: linear-gradient(to bottom, black 0%, transparent 70%);
 }
 
 a {
@@ -118,6 +133,7 @@ textarea {
   margin-inline: auto;
 }
 
+/* ── Header ─────────────────────────────────────────────────── */
 .site-header {
   position: sticky;
   top: 0;
@@ -128,13 +144,14 @@ textarea {
   gap: 1.25rem;
   min-height: 76px;
   padding: 0.85rem 0;
-  background: rgba(0, 16, 24, 0.76);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(235, 245, 248, 0.82);
+  border-bottom: 1px solid var(--line);
   backdrop-filter: blur(18px);
 }
 
 .site-header.is-scrolled {
-  background: rgba(0, 16, 24, 0.94);
+  background: rgba(235, 245, 248, 0.96);
+  box-shadow: 0 1px 24px rgba(6, 28, 46, 0.07);
 }
 
 .brand {
@@ -145,7 +162,7 @@ textarea {
   font-family: "Manrope", system-ui, sans-serif;
   font-weight: 800;
   letter-spacing: 0;
-  color: white;
+  color: var(--text);
 }
 
 .brand img {
@@ -164,7 +181,7 @@ textarea {
   display: inline-flex;
   align-items: center;
   border-bottom: 2px solid transparent;
-  color: #cbd5e1;
+  color: var(--muted);
   font-family: "Manrope", system-ui, sans-serif;
   font-weight: 700;
   font-size: 0.95rem;
@@ -177,6 +194,7 @@ textarea {
   border-color: var(--primary);
 }
 
+/* ── Boutons ────────────────────────────────────────────────── */
 .header-cta,
 .button {
   display: inline-flex;
@@ -197,7 +215,7 @@ textarea {
 .button.primary {
   background: var(--primary);
   color: var(--primary-ink);
-  box-shadow: 0 0 24px rgba(71, 234, 237, 0.22);
+  box-shadow: 0 0 24px rgba(3, 110, 115, 0.18);
 }
 
 .button.secondary {
@@ -226,6 +244,7 @@ textarea {
   color: var(--primary);
 }
 
+/* ── Hero ───────────────────────────────────────────────────── */
 .hero {
   position: relative;
   min-height: min(760px, calc(100vh - 76px));
@@ -246,20 +265,20 @@ textarea {
   inset: 0;
   content: "";
   background:
-    linear-gradient(to bottom, rgba(0, 22, 31, 0.1), var(--background)),
-    radial-gradient(circle at 50% 40%, rgba(71, 234, 237, 0.18), transparent 28rem),
-    linear-gradient(135deg, rgba(0, 82, 88, 0.7), rgba(0, 16, 24, 0.94));
+    linear-gradient(to bottom, rgba(235, 245, 248, 0.05), var(--background)),
+    radial-gradient(circle at 50% 40%, rgba(0, 210, 200, 0.12), transparent 28rem),
+    linear-gradient(135deg, rgba(205, 232, 238, 0.7), rgba(235, 245, 248, 0.95));
 }
 
 .caribbean-grid {
   position: absolute;
   inset: 12% 4% 0;
-  opacity: 0.36;
+  opacity: 0.28;
   background:
-    radial-gradient(circle at 25% 60%, rgba(71, 234, 237, 0.6) 0 2px, transparent 3px),
-    radial-gradient(circle at 44% 47%, rgba(255, 127, 28, 0.55) 0 2px, transparent 3px),
-    radial-gradient(circle at 65% 54%, rgba(71, 234, 237, 0.5) 0 2px, transparent 3px),
-    linear-gradient(120deg, transparent 10%, rgba(71, 234, 237, 0.24) 40%, transparent 70%);
+    radial-gradient(circle at 25% 60%, rgba(0, 210, 200, 0.7) 0 2px, transparent 3px),
+    radial-gradient(circle at 44% 47%, rgba(232, 99, 10, 0.55) 0 2px, transparent 3px),
+    radial-gradient(circle at 65% 54%, rgba(3, 110, 115, 0.6) 0 2px, transparent 3px),
+    linear-gradient(120deg, transparent 10%, rgba(0, 210, 200, 0.18) 40%, transparent 70%);
   filter: blur(0.1px);
 }
 
@@ -273,14 +292,14 @@ textarea {
   font-size: clamp(5rem, 15vw, 11rem);
   font-weight: 800;
   line-height: 0.85;
-  color: rgba(255, 255, 255, 0.13);
+  color: rgba(6, 28, 46, 0.07);
 }
 
 h1,
 h2,
 h3 {
   font-family: "Manrope", system-ui, sans-serif;
-  color: white;
+  color: var(--text);
   line-height: 1.12;
   letter-spacing: 0;
 }
@@ -308,6 +327,7 @@ h3 {
   margin-top: 2.2rem;
 }
 
+/* ── Sections ───────────────────────────────────────────────── */
 .section {
   padding: clamp(4rem, 8vw, 6.5rem) 0;
 }
@@ -355,6 +375,7 @@ h3 {
   font-size: 1.05rem;
 }
 
+/* ── Cards ──────────────────────────────────────────────────── */
 .mini-proof,
 .service-card,
 .audience-card,
@@ -366,7 +387,7 @@ blockquote,
 .values-section article {
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: rgba(7, 34, 46, 0.78);
+  background: rgba(255, 255, 255, 0.80);
   backdrop-filter: blur(14px);
 }
 
@@ -407,7 +428,7 @@ blockquote,
 .service-card {
   min-height: 280px;
   padding: 1.5rem;
-  transition: transform 0.2s, border-color 0.2s, background 0.2s;
+  transition: transform 0.2s, border-color 0.2s, background 0.2s, box-shadow 0.2s;
 }
 
 .service-card:hover,
@@ -415,8 +436,10 @@ blockquote,
 .audience-card:hover {
   transform: translateY(-4px);
   border-color: var(--line-strong);
+  box-shadow: var(--shadow);
 }
 
+/* Icônes de cards */
 .service-card .material-symbols-outlined,
 .audience-card .material-symbols-outlined,
 .module-grid .material-symbols-outlined,
@@ -427,12 +450,12 @@ blockquote,
   place-items: center;
   margin-bottom: 2.3rem;
   border-radius: var(--radius);
-  background: rgba(71, 234, 237, 0.12);
+  background: rgba(3, 110, 115, 0.10);
   color: var(--primary);
 }
 
 .service-card.accent-orange .material-symbols-outlined {
-  background: rgba(255, 127, 28, 0.16);
+  background: rgba(232, 99, 10, 0.10);
   color: var(--secondary);
 }
 
@@ -453,6 +476,7 @@ blockquote,
   font-weight: 800;
 }
 
+/* ── Trust section ─────────────────────────────────────────── */
 .trust-section {
   align-items: center;
   border-top: 1px solid var(--line);
@@ -480,14 +504,15 @@ blockquote cite {
   font-weight: 800;
 }
 
+/* ── CTA Panel ─────────────────────────────────────────────── */
 .cta-panel {
   margin-bottom: 4rem;
   padding: clamp(2rem, 5vw, 4rem);
   border: 1px solid var(--line-strong);
   border-radius: var(--radius);
   background:
-    radial-gradient(circle at 90% 15%, rgba(255, 127, 28, 0.22), transparent 20rem),
-    linear-gradient(135deg, rgba(0, 205, 218, 0.16), rgba(7, 34, 46, 0.86));
+    radial-gradient(circle at 90% 15%, rgba(232, 99, 10, 0.10), transparent 20rem),
+    linear-gradient(135deg, rgba(0, 210, 200, 0.10), rgba(255, 255, 255, 0.90));
   text-align: center;
 }
 
@@ -505,6 +530,7 @@ blockquote cite {
   margin-top: 2rem;
 }
 
+/* ── Page hero ─────────────────────────────────────────────── */
 .page-hero {
   min-height: 420px;
   display: flex;
@@ -520,6 +546,7 @@ blockquote cite {
   margin: 1.2rem 0 2rem;
 }
 
+/* ── Audience grid ─────────────────────────────────────────── */
 .audience-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -533,8 +560,8 @@ blockquote cite {
 .audience-card.featured {
   grid-column: span 2;
   background:
-    radial-gradient(circle at 100% 0%, rgba(71, 234, 237, 0.18), transparent 15rem),
-    rgba(7, 34, 46, 0.78);
+    radial-gradient(circle at 100% 0%, rgba(0, 210, 200, 0.12), transparent 15rem),
+    rgba(255, 255, 255, 0.90);
 }
 
 .audience-card ul {
@@ -555,6 +582,7 @@ blockquote cite {
   vertical-align: -0.2em;
 }
 
+/* ── Process ───────────────────────────────────────────────── */
 .process-section {
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
@@ -571,7 +599,7 @@ blockquote cite {
 .process-grid li {
   padding: 1.2rem;
   border-left: 2px solid var(--primary);
-  background: rgba(255, 255, 255, 0.035);
+  background: rgba(3, 110, 115, 0.04);
 }
 
 .process-grid strong {
@@ -590,6 +618,7 @@ blockquote cite {
   padding: 1.4rem;
 }
 
+/* ── Contact ───────────────────────────────────────────────── */
 .contact-layout {
   grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
 }
@@ -624,7 +653,7 @@ textarea {
   width: 100%;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: var(--surface);
+  background: var(--surface-low);
   color: var(--text);
   padding: 0.9rem 1rem;
   outline: 0;
@@ -642,6 +671,7 @@ input:focus,
 textarea:focus {
   border-color: var(--primary);
   box-shadow: 0 0 0 1px var(--primary);
+  background: var(--surface);
 }
 
 .contact-card {
@@ -683,6 +713,7 @@ textarea:focus {
   font-weight: 800;
 }
 
+/* ── News ──────────────────────────────────────────────────── */
 .news-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -706,6 +737,7 @@ textarea:focus {
   font-size: 1.7rem;
 }
 
+/* ── Redirect ──────────────────────────────────────────────── */
 .redirect-page {
   min-height: 70vh;
   display: grid;
@@ -713,6 +745,7 @@ textarea:focus {
   padding: 4rem var(--gutter);
 }
 
+/* ── Prose / page layout ───────────────────────────────────── */
 .page-main,
 .page-shell,
 .prose {
@@ -738,6 +771,7 @@ textarea:focus {
   padding-left: 1.2rem;
 }
 
+/* ── Footer ────────────────────────────────────────────────── */
 .site-footer {
   display: flex;
   justify-content: space-between;
@@ -761,6 +795,7 @@ textarea:focus {
   font-weight: 700;
 }
 
+/* ── Mentions légales ──────────────────────────────────────── */
 body.legal {
   padding: 3rem 1.5rem 6rem;
   max-width: 760px;
@@ -790,6 +825,7 @@ td {
   vertical-align: top;
 }
 
+/* ── Responsive ────────────────────────────────────────────── */
 @media (max-width: 920px) {
   .site-header {
     grid-template-columns: 1fr auto auto;
@@ -813,7 +849,7 @@ td {
     padding: 0.8rem;
     border: 1px solid var(--line);
     border-radius: var(--radius);
-    background: rgba(0, 16, 24, 0.98);
+    background: rgba(235, 245, 248, 0.98);
     box-shadow: var(--shadow);
   }
 

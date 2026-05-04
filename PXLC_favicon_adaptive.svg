@@ -1,0 +1,31 @@
+<svg
+  width="512"
+  height="512"
+  viewBox="0 0 512 512"
+  xmlns="http://www.w3.org/2000/svg"
+  role="img"
+  aria-label="PXLC">
+  <title>PXLC</title>
+  <style>
+    :root { --bg: #EBF5F8; }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #1A2B2E; }
+    }
+    #bg { fill: var(--bg); }
+  </style>
+  <!-- Fond adaptatif -->
+  <rect id="bg" width="512" height="512" rx="71"/>
+  <!-- Col 1 — 100% cyan -->
+  <rect x="48"  y="48"  width="120" height="120" rx="12" fill="#00D2C8"/>
+  <rect x="48"  y="196" width="120" height="120" rx="12" fill="#00D2C8"/>
+  <rect x="48"  y="344" width="120" height="120" rx="12" fill="#00D2C8"/>
+  <!-- Col 2 — 60% cyan -->
+  <rect x="196" y="48"  width="120" height="120" rx="12" fill="#00D2C8" fill-opacity="0.60"/>
+  <rect x="196" y="196" width="120" height="120" rx="12" fill="#00D2C8" fill-opacity="0.60"/>
+  <rect x="196" y="344" width="120" height="120" rx="12" fill="#00D2C8" fill-opacity="0.60"/>
+  <!-- Col 3 — 20% cyan -->
+  <rect x="344" y="48"  width="120" height="120" rx="12" fill="#00D2C8" fill-opacity="0.20"/>
+  <rect x="344" y="196" width="120" height="120" rx="12" fill="#00D2C8" fill-opacity="0.20"/>
+  <!-- Pixel accent orange -->
+  <rect x="344" y="344" width="120" height="120" rx="12" fill="#ff781e"/>
+</svg>

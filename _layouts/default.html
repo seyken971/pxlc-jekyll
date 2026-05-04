@@ -53,18 +53,26 @@
       name="twitter:image"
       content="https://pxlc.fr/PXLC_opengraph_1200x630.png"
     />
+
     <!-- Thème / icônes -->
-    <meta name="theme-color" content="#00161f" />
+    <meta name="theme-color" content="#EBF5F8" />
     <link
       rel="icon"
       type="image/svg+xml"
-      href="{{ '/pxlc_favicon.svg' | relative_url }}"
+      href="{{ '/pxlc_favicon_adaptive.svg' | relative_url }}"
     />
     <link
       rel="icon"
       type="image/png"
       href="{{ '/favicon.png' | relative_url }}"
     />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{{ '/PXLC_apple-touch-icon.png' | relative_url }}"
+    />
+    <!-- Manifest (Android Chrome, PWA) -->
+    <link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}" />
 
     <!-- CSP de secours -->
     <meta
